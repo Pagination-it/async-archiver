@@ -1,6 +1,6 @@
 {
   "name": "@pagination/async-archiver",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Wrapper with async/await interface for archiver",
   "main": "main.js",
   "scripts": {
