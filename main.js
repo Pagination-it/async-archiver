@@ -1,6 +1,6 @@
 const archiver = require('archiver')
 
-class Archiver {
+class Archive {
   /**
    * 
    * @param {string} format the archive format. Accepted values: `zip`, `tar`
@@ -22,13 +22,14 @@ class Archiver {
     this.archive.directory(...params);
   }
 
-  async archive() {
+  async finalize() {
     return new Promise((resolve, reject) => {
       this.archive.on('end', resolve);
       this.archive.on('error', reject);
       /**@todo handle warnings */
+      this.archive.finalize();
     });
   }
 }
 
-module.exports = Archiver;
+module.exports = Archive;
