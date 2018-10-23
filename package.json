@@ -1,0 +1,19 @@
+{
+  "name": "@pagination/async-archiver",
+  "version": "0.1.0",
+  "description": "Wrapper with async/await interface for archiver",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "archiver",
+    "async",
+    "promise"
+  ],
+  "author": "sime1",
+  "license": "MIT",
+  "dependencies": {
+    "archiver": "^3.0.0"
+  }
+}
