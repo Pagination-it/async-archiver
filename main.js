@@ -1,4 +1,5 @@
 const archiver = require('archiver')
+const { createWriteStream } = require('fs');
 
 class Archive {
   /**
@@ -6,8 +7,10 @@ class Archive {
    * @param {string} format the archive format. Accepted values: `zip`, `tar`
    * @param {Object} options archive creation options
    */
-  constructor(...params) {
+  constructor(out, ...params) {
     this.archive = archiver(...params);
+    const output = createWriteStream(out);
+    this.archive.pipe(output);
   }
   
   file(...params) {
